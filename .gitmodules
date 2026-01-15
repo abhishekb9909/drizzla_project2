@@ -1,0 +1,3 @@
+[submodule "document-rag-pipeline"]
+	path = document-rag-pipeline
+	url = https://github.com/3ab-60/document-rag-pipeline
