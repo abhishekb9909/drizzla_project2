@@ -92,8 +92,10 @@ class RAGService:
         for i, chunk in enumerate(retrieved, 1):
             header = f"[Chunk {i} - Doc: {chunk.get('doc_name', 'unknown')}"
             
-            if chunk.get('page_number'):
-                header += f", Page: {chunk['page_number']}"
+            # Map 'location' to page number if present (common in PDF ingestion)
+            page_num = chunk.get('page_number') or chunk.get('location')
+            if page_num:
+                header += f", Page: {page_num}"
             if chunk.get('section_title'):
                 header += f", Section: {chunk['section_title']}"
             
@@ -112,9 +114,11 @@ class RAGService:
         
         for chunk in retrieved:
             # Avoid duplicate references from same location
+            page_num = chunk.get('page_number') or chunk.get('location')
+            
             ref_key = (
                 chunk.get('doc_name'),
-                chunk.get('page_number'),
+                page_num,
                 chunk.get('section_title')
             )
             
@@ -127,8 +131,8 @@ class RAGService:
                 "chunk_id": chunk.get('chunk_id'),
             }
             
-            if chunk.get('page_number') is not None:
-                ref["page_number"] = chunk['page_number']
+            if page_num is not None:
+                ref["page_number"] = page_num
             if chunk.get('section_title'):
                 ref["section_title"] = chunk['section_title']
             if chunk.get('location'):
