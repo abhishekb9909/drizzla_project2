@@ -103,5 +103,5 @@ python src/debug_tools.py
 
 ## Troubleshooting
 
-- **Python Requirements**: If `setup.bat` fails finding Python, ensure python is added to your system PATH.
+
 - **Submodules empty**: If the `document-rag-pipeline` folder is empty, run `git submodule update --init --recursive`.
