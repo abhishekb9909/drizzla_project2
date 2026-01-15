@@ -143,7 +143,7 @@ class RAGService:
         try:
             logger.info("Testing RAG pipeline...")
             
-            test_query = "What is document chunking?"
+            test_query = "What is AI?"
             logger.info(f"Test query: {test_query}")
             
             # Test retrieval
