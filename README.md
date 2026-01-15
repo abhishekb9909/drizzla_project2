@@ -61,13 +61,25 @@ The pipeline operates in two distinct phases. Ensure your virtual environment is
 ### Phase 1: Ingestion & Vectorization
 Navigate to the pipeline directory to process documents and build vectors.
 
+### Phase 1: Ingestion & Vectorization
+Navigate to the pipeline directory to process documents and build vectors.
+
+#### 1. Ingest a Document
+Run the ingestion script and provide a file path when prompted. You can use the included sample files:
+
 ```bat
 cd document-rag-pipeline
-
-REM Ingest Documents
 python main.py
+```
+**Sample Inputs (copy and paste when prompted):**
+- **PDF**: `data\raw_docs\AI CONCLAVE REPORT.pdf`
+- **Word (Modern)**: `data\raw_docs\Task.docx`
+- **Word (Legacy)**: `data\raw_docs\Task.doc`
+- **Excel**: `data\raw_docs\Test.xlsx`
 
-REM Create Vectors
+#### 2. Create Vectors
+Once a document is ingested (and `chunks.json` is created), generate its vectors:
+```bat
 python vectorize.py
 ```
 
@@ -77,10 +89,8 @@ Return to the root directory to run the interactive application or API server.
 ```bat
 cd ..
 
-REM Interactive Command Line Interface using Rich Text
 python src/main_app.py
 
-REM REST API Server
 python src/api_server.py
 ```
 
