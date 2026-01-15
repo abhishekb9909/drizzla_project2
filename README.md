@@ -4,7 +4,7 @@ A robust Retrieval-Augmented Generation (RAG) pipeline for document processing, 
 
 ## Prerequisites
 
-- **OS**: Windows (recommended for the provided setup script)
+- **OS**: Windows (recommended )
 - **Python**: Version 3.9 or higher
 - **Git**: Installed and available in your system PATH
 
