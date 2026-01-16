@@ -3,8 +3,10 @@
 A robust Retrieval-Augmented Generation (RAG) pipeline for document processing, vectorization, and interactive querying. This project is designed to run on Windows and utilizes Azure OpenAI for intelligent document interaction.
 
 ## Prerequisites
-- **Python**: Version 3.9 or higher
-- **Git**: Installed and available in your system PATH
+- **Python**: Version 3.9 or higher (Python 3.11 recommended)
+- **Git**: Installed and available in the system PATH
+- **LibreOffice**: Must be installed to enable `.doc` → `.docx` conversion
+- **Rust**: Optional, required only if building FAISS from source
 
 ## Installation
 
@@ -59,10 +61,7 @@ Open the newly created `.env` file in your text editor and populate it with your
 
 The pipeline operates in two distinct phases. Ensure your virtual environment is activated before running these commands.
 
-### Phase 1: Ingestion & Vectorization
-Navigate to the pipeline directory to process documents and build vectors.
-
-### Phase 1: Ingestion & Vectorization
+### Phase 1: Ingestion & Vectorization (Done by Roschelle)
 Navigate to the pipeline directory to process documents and build vectors.
 
 #### 1. Ingest a Document
@@ -84,7 +83,7 @@ Once a document is ingested (and `chunks.json` is created), generate its vectors
 python vectorize.py
 ```
 
-### Phase 2: Application Running
+### Phase 2: Application Running (Done by Abhishek)
 Return to the root directory to run the interactive application or API server.
 
 ```bat
