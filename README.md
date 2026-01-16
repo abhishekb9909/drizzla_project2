@@ -93,6 +93,8 @@ Return to the root directory to run the interactive application or API server.
 cd ..
 
 python src/main_app.py
+or
+py -3.11 src/main_app.py
 
 python src/api_server.py
 ```
