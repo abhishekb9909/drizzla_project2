@@ -1,6 +1,6 @@
 # Document RAG Pipeline
 
-A robust Retrieval-Augmented Generation (RAG) pipeline for document processing, vectorization, and interactive querying. This project is designed to run on Windows and utilizes Azure OpenAI for intelligent document interaction.
+A robust Retrieval-Augmented Generation (RAG) pipeline for document processing, vectorization, and interactive querying. This project utilizes Azure OpenAI for intelligent document interaction.
 
 ## Prerequisites
 - **Python**: Version 3.9 or higher (Python 3.11 recommended)
@@ -53,9 +53,13 @@ If you prefer to set up the environment manually:
     copy .env.example .env
     ```
 
-## Configuration
+## Environment Configuration
 
 Open the newly created `.env` file in your text editor and populate it with your Azure OpenAI credentials and other required settings.
+
+## System Configuration
+
+**LibreOffice Path**: Update the LIBREOFFICE_PATH variable in document-rag-pipeline/ingestion/doc_converter.py to match the LibreOffice installation path on your system
 
 ## Usage
 
@@ -69,7 +73,10 @@ Run the ingestion script and provide a file path when prompted. You can use the 
 
 ```bat
 cd document-rag-pipeline
+
 python main.py
+or
+py -3.11 main.py
 ```
 **Sample Inputs (copy and paste when prompted):**
 - **PDF**: `data\raw_docs\AI CONCLAVE REPORT.pdf`
@@ -81,9 +88,11 @@ python main.py
 Once a document is ingested (and `chunks.json` is created), generate its vectors:
 ```bat
 python vectorize.py
+or
+py -3.11 vectorize.py
 ```
 
-### Phase 2: Application Running (Done by Abhishek)
+### Phase 2: RAG Pipeline & Application Running (Done by Abhishek)
 Return to the root directory to run the interactive application or API server.
 
 ```bat
