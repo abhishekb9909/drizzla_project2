@@ -3,8 +3,6 @@
 A robust Retrieval-Augmented Generation (RAG) pipeline for document processing, vectorization, and interactive querying. This project is designed to run on Windows and utilizes Azure OpenAI for intelligent document interaction.
 
 ## Prerequisites
-
-- **OS**: Windows (recommended )
 - **Python**: Version 3.9 or higher
 - **Git**: Installed and available in your system PATH
 
