@@ -168,7 +168,7 @@ def main():
         elif choice == "4":
             test_pipeline()
         elif choice == "5":
-            print("\n Bye byeeeeee\n")
+            print("\nExited Successfully\n")
             break
         else:
             print("  Invalid choice. Please try again.")
